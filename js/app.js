@@ -1,4 +1,5 @@
-var url = "./files/rest.txt";
+//var url = "./files/rest.txt";
+var url = "https://s3.amazonaws.com/api-fun/books.json";  // Fetching directily from Server Works!!. 
 var xmlhttp = new XMLHttpRequest();
 var images = '';
 //var sortbutton = document.createElement('button');
