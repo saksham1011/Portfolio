@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <title>Books App</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <script data-require="angular.js@1.1.x" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.1.5/angular.js" data-semver="1.1.5"></script>
+
+    <!--      Bootstrap CSS    -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css" href="./css/index2.css">
+
+</head>
+
+<body ng-app="myApp" ng-controller="myCtrl">
+
+    <div class="container">
+        <div class="page-header text-center">
+            <h1>Books App</h1>
+        </div>
+        <div class="row">
+            <div class="col-md-5" id="div1">
+                <p id="heading1">Author's Name - {{myJson.data.author}}</p>
+                <p id="heading2">Author's Birthday - {{myJson.data.birthday}}</p>
+                <p id="heading3">Author's Birthplace - {{myJson.data.birthPlace}}</p>
+            </div>
+            <div class="col-lg-10 offset-md-2">
+                <button ng-click="sort('PublishDate')">Order By Date</button>
+                <ul id='item'>
+                    <li ng-repeat="books in myJson.data.books | orderBy: 'PublishDate': reverse"><a href="{{books.purchaseLink}}">{{books.title}}</a> <br><p>{{books.PublishDate}}</p><br><img src="{{books.imageUrl}}" /></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var app = angular.module('myApp', []);
+        var url = "https://s3.amazonaws.com/api-fun/books.json";  // Fetching directily from Server Works!!. 
+        app.controller('myCtrl', function($scope, $http) {
+            $http.get(url)
+                .then(function(response) {
+                    $scope.myJson = response.data;
+                    $scope.sort = function(PublishDate) {
+                        $scope.sortKey = 'PublishDate';
+                        $scope.reverse = !$scope.reverse; //if true make it false and vice versa
+                    }
+                });
+        });
+    </script>
+
+</body>
+</html>
