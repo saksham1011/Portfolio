@@ -1,4 +1,5 @@
-## Portfolio
+# Portfolio
+
 Used Bootstrap's template for the portfolio.
 
 ## Copyright and License
