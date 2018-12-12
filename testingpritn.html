@@ -72,7 +72,18 @@
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
     </div>
 
+   <button id="btn">testing</button>
+    <div>
+        <p id="p_t">testing print-no class</p>
+    </div>
+
     <script>
+        var test = document.getElementById('btn');
+        var p_tag = document.getElementById('p_t');
+        test.addEventListener('click', function() {
+            p_tag.classList.add('print-no');
+        });
+
         var acc = document.getElementsByClassName("accordion");
         var i;
 
@@ -85,7 +96,7 @@
 
                 if (panel.style.display === "block") {
                     panel.style.display = "none";
-                    panel.classList.add("print-no");
+                    this.classList.remove("print-no");
                 } else {
                     panel.style.display = "block";
 
@@ -94,6 +105,7 @@
         }
 
     </script>
+
 
 </body>
 
