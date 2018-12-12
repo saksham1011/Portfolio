@@ -63,32 +63,31 @@
     <p>hello world</p>
 
     <button class="accordion ">Section 1</button>
+    <div class="panel print-no">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    </div>
+
+    <button class="accordion print-no">Section 2</button>
     <div class="panel">
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
     </div>
 
-    <button class="accordion">Section 2</button>
+    <button class="accordion print-no">Section 3</button>
     <div class="panel">
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
     </div>
 
-    <button class="accordion">Section 3</button>
-    <div class="panel">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    <button id="btn">testing</button>
+    <div>
+        <p id="p_t">testing print-no class</p>
     </div>
-
-<!--    <button id="btn">testing</button>
-    
-        <p id="p_t">testing print-no class</p> -->
-  
-
 
     <script>
-//         var test = document.getElementById('btn');
-//         var p_tag = document.getElementById('p_t');
-//         test.addEventListener('click', function() {
-//             p_tag.classList.add('print-no');
-//         });
+        var test = document.getElementById('btn');
+        var p_tag = document.getElementById('p_t');
+        test.addEventListener('click', function() {
+            p_tag.classList.add('print-no');
+        });
 
         var acc = document.getElementsByClassName("accordion");
         var i;
@@ -102,7 +101,7 @@
 
                 if (panel.style.display === "block") {
                     panel.style.display = "none";
-                    
+                    this.classList.remove("print-no");
                 } else {
                     panel.style.display = "block";
 
@@ -111,7 +110,6 @@
         }
 
     </script>
-
 
 </body>
 
