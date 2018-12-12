@@ -55,7 +55,7 @@
 
 <body>
 
-    <h2>Accordion v1</h2>
+    <h2>Accordion v3</h2>
 
     <button class="accordion ">Section 1</button>
     <div class="panel">
@@ -72,9 +72,9 @@
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
     </div>
 
-   <button id="btn">testing</button>
+<!--    <button id="btn">testing</button>
     
-        <p id="p_t">testing print-no class</p>
+        <p id="p_t">testing print-no class</p> -->
   
     <p>hello world</p>
     <p>hello world</p>
@@ -82,11 +82,11 @@
     <p>hello world</p>
 
     <script>
-        var test = document.getElementById('btn');
-        var p_tag = document.getElementById('p_t');
-        test.addEventListener('click', function() {
-            p_tag.classList.add('print-no');
-        });
+//         var test = document.getElementById('btn');
+//         var p_tag = document.getElementById('p_t');
+//         test.addEventListener('click', function() {
+//             p_tag.classList.add('print-no');
+//         });
 
         var acc = document.getElementsByClassName("accordion");
         var i;
@@ -100,7 +100,7 @@
 
                 if (panel.style.display === "block") {
                     panel.style.display = "none";
-                    this.classList.remove("print-no");
+                    
                 } else {
                     panel.style.display = "block";
 
