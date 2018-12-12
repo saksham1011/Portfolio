@@ -56,10 +56,10 @@
 <body>
 
     <h2>Accordion</h2>
- <p class="print-no">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor</p>
-    <button class="accordion print-no">Section 1</button>
+
+    <button class="accordion ">Section 1</button>
     <div class="panel print-no">
-        <p class="print-no">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
     </div>
 
     <button class="accordion print-no">Section 2</button>
@@ -85,9 +85,10 @@
 
                 if (panel.style.display === "block") {
                     panel.style.display = "none";
+                    this.classList.remove("print-no");
                 } else {
                     panel.style.display = "block";
-                    this.classList.remove("print-no");
+
                 }
             });
         }
